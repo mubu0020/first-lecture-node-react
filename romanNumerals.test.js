@@ -4,11 +4,21 @@ function romanNumerals(number) {
   let iCounter = 0;
   let returnValue = "";
   for (let i = 0; i < number; i++) {
-    if (number !== iCounter) {
-      iCounter++;
+    if (number <= 3) {
       returnValue += "I";
     }
   }
+  if (number === 4) {
+    returnValue += "IV";
+  } else if (number === 5) {
+    returnValue += "V";
+  } else if (number >= 6 && number < 9) {
+    returnValue = "V";
+    for (let i = 5; i < number; i++) {
+      returnValue += "I";
+    }
+  }
+
   return returnValue;
 }
 
@@ -26,4 +36,15 @@ test("3 in roman numerals is III", () => {
 
 test("4 in roman numerals is IV", () => {
   expect(romanNumerals(4)).toBe("IV");
+});
+
+test("7 in roman numerals is IV", () => {
+  expect(romanNumerals(7)).toBe("VII");
+});
+test("8 in roman numerals is IV", () => {
+  expect(romanNumerals(8)).toBe("VIII");
+});
+
+test("9 in roman numerals is IV", () => {
+  expect(romanNumerals(9)).toBe("IX");
 });
