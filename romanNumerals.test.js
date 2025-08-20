@@ -1,8 +1,15 @@
 import { test, expect } from "vitest";
 
 function romanNumerals(number) {
-  if (number == 2) return "II";
-  return "I";
+  let iCounter = 0;
+  let returnValue = "";
+  for (let i = 0; i < number; i++) {
+    if (number !== iCounter) {
+      iCounter++;
+      returnValue += "I";
+    }
+  }
+  return returnValue;
 }
 
 test("1 in roman numerals is I", () => {
