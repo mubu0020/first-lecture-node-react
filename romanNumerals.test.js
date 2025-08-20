@@ -1,5 +1,7 @@
 import { test, expect } from "vitest";
 
+import { test, expect } from "vitest";
+
 function romanNumerals(number) {
   let iCounter = 0;
   let returnValue = "";
@@ -10,15 +12,19 @@ function romanNumerals(number) {
   }
   if (number === 4) {
     returnValue += "IV";
-  } else if (number === 5) {
-    returnValue += "V";
-  } else if (number >= 6 && number < 9) {
+  } else if (number >= 5 && number < 9) {
     returnValue = "V";
     for (let i = 5; i < number; i++) {
       returnValue += "I";
     }
+  } else if (number === 9) {
+    returnValue = "IX";
+  } else if (number >= 10 && number < 14) {
+    returnValue = "X";
+    for (let i = 10; i < number; i++) {
+      returnValue += "I";
+    }
   }
-
   return returnValue;
 }
 
@@ -47,4 +53,11 @@ test("8 in roman numerals is IV", () => {
 
 test("9 in roman numerals is IV", () => {
   expect(romanNumerals(9)).toBe("IX");
+});
+test("10 in roman numerals is X", () => {
+  expect(romanNumerals(10)).toBe("X");
+});
+
+test("13 in roman numerals is XIII", () => {
+  expect(romanNumerals(13)).toBe("XIII");
 });
