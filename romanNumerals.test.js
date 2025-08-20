@@ -25,5 +25,5 @@ test("3 in roman numerals is III", () => {
 });
 
 test("4 in roman numerals is IV", () => {
-  expect(romanNumerals(3)).toBe("IV");
+  expect(romanNumerals(4)).toBe("IV");
 });
