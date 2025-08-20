@@ -1,0 +1,27 @@
+{
+  "name": "first-lecture-node-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "prettier --check .",
+    "prepare": "husky",
+    "test:watch": "vitest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mubu0020/first-lecture-node-react.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mubu0020/first-lecture-node-react/issues"
+  },
+  "homepage": "https://github.com/mubu0020/first-lecture-node-react#readme",
+  "description": "",
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "prettier": "^3.6.2",
+    "vitest": "^3.2.4"
+  }
+}
