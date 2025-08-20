@@ -1,7 +1,5 @@
 import { test, expect } from "vitest";
 
-import { test, expect } from "vitest";
-
 function romanNumerals(number) {
   let iCounter = 0;
   let returnValue = "";
