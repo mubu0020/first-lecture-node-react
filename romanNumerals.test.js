@@ -3,29 +3,29 @@ import { test, expect } from "vitest";
 import { test, expect } from "vitest";
 
 function romanNumerals(number) {
-  let iCounter = 0;
-  let returnValue = "";
-  for (let i = 0; i < number; i++) {
-    if (number <= 3) {
-      returnValue += "I";
+  let result;
+  const romanNumerals = [
+    { value: 1000, symbol: "M" },
+    { value: 900, symbol: "CM" },
+    { value: 500, symbol: "D" },
+    { value: 400, symbol: "CD" },
+    { value: 100, symbol: "C" },
+    { value: 90, symbol: "XC" },
+    { value: 50, symbol: "L" },
+    { value: 40, symbol: "XL" },
+    { value: 10, symbol: "X" },
+    { value: 9, symbol: "IX" },
+    { value: 5, symbol: "V" },
+    { value: 4, symbol: "IV" },
+    { value: 1, symbol: "I" },
+  ];
+  for (let i = 0; i < romanNumerals.length; i++) {
+    while (number >= romanNumerals[i].value) {
+      result += romanNumerals[i].symbol;
+      number -= romanNumerals[i].value;
     }
   }
-  if (number === 4) {
-    returnValue += "IV";
-  } else if (number >= 5 && number < 9) {
-    returnValue = "V";
-    for (let i = 5; i < number; i++) {
-      returnValue += "I";
-    }
-  } else if (number === 9) {
-    returnValue = "IX";
-  } else if (number >= 10 && number < 14) {
-    returnValue = "X";
-    for (let i = 10; i < number; i++) {
-      returnValue += "I";
-    }
-  }
-  return returnValue;
+  return result;
 }
 
 test("1 in roman numerals is I", () => {
