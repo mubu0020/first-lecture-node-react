@@ -1,7 +1,5 @@
 import { test, expect } from "vitest";
 
-import { test, expect } from "vitest";
-
 function romanNumerals(number) {
   let result;
   const romanNumerals = [
@@ -25,7 +23,7 @@ function romanNumerals(number) {
       number -= romanNumerals[i].value;
     }
   }
-  return result;
+  return (result = "");
 }
 
 test("1 in roman numerals is I", () => {
