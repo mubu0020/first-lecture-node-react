@@ -1,8 +1,8 @@
 import { test, expect } from "vitest";
 
 function romanNumerals(number) {
-  let result;
-  const romanNumerals = [
+  let result = "";
+  const romanNumbers = [
     { value: 1000, symbol: "M" },
     { value: 900, symbol: "CM" },
     { value: 500, symbol: "D" },
@@ -17,13 +17,13 @@ function romanNumerals(number) {
     { value: 4, symbol: "IV" },
     { value: 1, symbol: "I" },
   ];
-  for (let i = 0; i < romanNumerals.length; i++) {
-    while (number >= romanNumerals[i].value) {
-      result += romanNumerals[i].symbol;
-      number -= romanNumerals[i].value;
+  for (let i = 0; i < romanNumbers.length; i++) {
+    while (number >= romanNumbers[i].value) {
+      result += romanNumbers[i].symbol;
+      number -= romanNumbers[i].value;
     }
   }
-  return (result = "");
+  return result;
 }
 
 test("1 in roman numerals is I", () => {
